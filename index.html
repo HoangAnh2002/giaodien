@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/bootstrap.min.js">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        @font-face {
+            font-family: myFont;
+            src: url("static/Quicksand-SemiBold.ttf");
+        }
+        
+        * {
+            font-family: myFont;
+        }
+        
+        .listMenu {
+            height: 100%;
+            width: 30%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* font-size: 15px; */
+            background-color: #fff;
+        }
+        /* Style the sidenav links and the dropdown button */
+        
+        .listMenu a,
+        .dropdown-btn {
+            padding: 15px 6px 15px 0px;
+            text-decoration: none;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        }
+        /* On mouse-over */
+        
+        .listMenu a:hover,
+        .dropdown-btn:hover {
+            color: #da2121;
+        }
+        /* Add an active class to the active dropdown button */
+        /* .active {
+            color: #da2121;
+        } */
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        
+        .dropdown-container {
+            display: none;
+            padding-left: 0px;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .left-divider {
+            height: 1px;
+            border-top: #6c6d6f 1px solid;
+            margin: 1px 0px;
+        }
+        
+        .dropdown-btn.active::after {
+            content: "\2212";
+            float: right;
+        }
+        
+        .dropdown-btn::after {
+            content: "\002B";
+            float: right;
+        }
+        
+        ul.my-ul-menu-lv2 {
+            padding-left: 15px;
+        }
+        
+        ul li.active a {
+            color: #da2121;
+        }
+        
+        .dropdown-btn.active {
+            color: #da2121;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="myMenu" class="listMenu col-md-3" style="font-size: 15px;">
+
+        <ul class="my-ul-menu-lv1">
+            <li><a href="#">Giới thiệu doanh nghiệp</a></li>
+            <div class="row left-divider"></div>
+
+            <!-- Button Thông tin tài chính -->
+            <button class="dropdown-btn my-border">Thông tin tài chính</button>
+            <div class="dropdown-container my-border">
+                <ul class="my-ul-menu-lv2">
+                    <li><a href="#">Link 1</a></li>
+                    <div class="row left-divider"></div>
+                    <li><a href="#">Link 2</a></li>
+                    <div class="row left-divider"></div>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </div>
+
+            <div class="row left-divider"></div>
+            <li><a class="my-border" href="#">Đại hội đồng cổ đông</a></li>
+            <div class="row left-divider"></div>
+            <li><a class="my-border" href="#">Báo cáo thường niên</a></li>
+            <div class="row left-divider"></div>
+            <li><a class="my-border" href="#">Công bố thông tin</a></li>
+            <div class="row left-divider"></div>
+
+            <!-- Button thông tin cổ đông -->
+            <button class="dropdown-btn my-border">Thông tin cổ đông</button>
+            <div class="dropdown-container my-border">
+                <ul class="my-ul-menu-lv2">
+                    <li><a href="#">Link 1</a></li>
+                    <div class="row left-divider"></div>
+                    <li><a href="#">Link 2</a></li>
+                    <div class="row left-divider"></div>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </div>
+
+            <div class="row left-divider"></div>
+
+            <!-- Button Quản trị kinh doanh -->
+            <button class="dropdown-btn my-border">Quản trị doanh nghiệp</button>
+            <div class="dropdown-container my-border">
+                <ul class="my-ul-menu-lv2">
+                    <li><a href="#">Link 1</a></li>
+                    <div class="row left-divider"></div>
+                    <li><a href="#">Link 2</a></li>
+                    <div class="row left-divider"></div>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </div>
+
+            <div class="row left-divider"></div>
+            <li><a class="my-border" href="#">Liên hệ</a></li>
+            <div class="row left-divider"></div>
+        </ul>
+    </div>
+
+    <script>
+        $(document).on('click', 'ul li', function() {
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+
+        var acc = document.getElementsByClassName("dropdown-btn");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContainer = this.nextElementSibling;
+                if (dropdownContainer.style.display === "block") {
+                    dropdownContainer.style.display = "none";
+                } else {
+                    dropdownContainer.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
