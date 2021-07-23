@@ -1,0 +1,91 @@
+/* @font-face {
+    font-family: myFont;
+    src: url("static/Quicksand-SemiBold.ttf");
+}
+
+* {
+    font-family: myFont;
+} */
+
+.listMenu {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* font-size: 15px; */
+    background-color: #fff;
+}
+
+
+/* Style the sidenav links and the dropdown button */
+
+.listMenu a,
+.dropdown-btn {
+    padding: 15px 6px 15px 0px;
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* On mouse-over */
+
+.listMenu a:hover,
+.dropdown-btn:hover {
+    color: #da2121;
+}
+
+
+/* Add an active class to the active dropdown button */
+
+
+/* .active {
+    color: #da2121;
+} */
+
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
+.dropdown-container {
+    display: none;
+    padding-left: 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.left-divider {
+    height: 1px;
+    border-top: #6c6d6f 1px solid;
+    margin: 1px 0px;
+}
+
+.dropdown-btn.active::after {
+    content: "\2212";
+    float: right;
+}
+
+.dropdown-btn::after {
+    content: "\002B";
+    float: right;
+}
+
+ul.my-ul-menu-lv2 {
+    padding-left: 15px;
+}
+
+ul li.active a {
+    color: #da2121;
+}
+
+.dropdown-btn.active {
+    color: #da2121;
+}
